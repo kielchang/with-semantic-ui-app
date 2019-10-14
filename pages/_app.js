@@ -3,8 +3,13 @@ import React from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  *{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
     font-family: 'Noto Sans TC', sans-serif, 'Roboto', sans-serif;
   }
 `;
@@ -12,6 +17,9 @@ const GlobalStyle = createGlobalStyle`
 const theme = {
   colors: {
     primary: "#255EA8"
+  },
+  size: {
+    navHeight: "60px"
   }
 };
 
