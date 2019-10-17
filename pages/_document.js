@@ -20,7 +20,10 @@ export default class extends Document {
     return (
       <html>
         <Head>
-          <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Roboto|Montserrat|Lato&display=swap" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Roboto|Montserrat|Lato&display=swap"
+            rel="stylesheet"
+          />
           {this.props.styleTags}
         </Head>
         <body>

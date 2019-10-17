@@ -1,4 +1,3 @@
-import "semantic-ui-css/semantic.min.css";
 import { Modal, Button, Icon } from "semantic-ui-react";
 
 import SmallImage from "./SmallImage.png";

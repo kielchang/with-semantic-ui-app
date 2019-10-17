@@ -1,6 +1,7 @@
 import App from "next/app";
 import React from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
+import "semantic-ui-css/semantic.min.css";
 
 const GlobalStyle = createGlobalStyle`
   *{
