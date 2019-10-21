@@ -7,7 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "bowser": "^2.7.0",
+    "detect-browser": "^4.7.0",
     "lorem-ipsum": "^2.0.3",
     "next": "latest",
     "react": "^16.7.0",

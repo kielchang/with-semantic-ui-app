@@ -2,6 +2,7 @@ import App from "next/app";
 import React from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import "semantic-ui-css/semantic.min.css";
+import IEnotSupport from "../components/IEnotSupport";
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -30,6 +31,7 @@ export default class MyApp extends App {
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyle />
+        <IEnotSupport />
         <Component {...pageProps} />
       </ThemeProvider>
     );

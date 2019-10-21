@@ -1,7 +1,6 @@
 import { Component } from "react";
 import styled from "styled-components";
 import { Icon } from "semantic-ui-react";
-import Bowser from "bowser";
 
 const Navbar = styled.nav`
   background-color: #1c1c1c;
@@ -127,87 +126,69 @@ const Image = styled.img`
   width: 100%;
 `;
 
-// console.log(`The current browser name is "${browser.getBrowserName()}"`);
+export default props => {
+  return (
+    <>
+      <Navbar>
+        <NavLogo>
+          <h1>KCI</h1>
+        </NavLogo>
+        <NavItemContainer>
+          <NavItem>
+            <a href="#">關於我們</a>
+            <NavSubItem>
+              <div style={{}}>
+                <Image src="https://picsum.photos/300" alt="image" />
+              </div>
+            </NavSubItem>
+          </NavItem>
+          <NavItem>
+            <a href="#">解決方案</a>
+            <NavSubItem>
+              <div style={{}}>
+                <Image src="https://picsum.photos/400" alt="image" />
+              </div>
+              <div style={{}}>
+                <Image src="https://picsum.photos/400" alt="image" />
+              </div>
+              <div style={{}}>
+                <Image src="https://picsum.photos/400" alt="image" />
+              </div>
+              <div style={{}}>
+                <Image src="https://picsum.photos/400" alt="image" />
+              </div>
+            </NavSubItem>
+          </NavItem>
+          <NavItem>
+            <a href="#">產品</a>
+            <NavSubItem>
+              <div style={{}}>
+                <Image src="https://picsum.photos/600" alt="image" />
+              </div>
+              <div style={{}}>
+                <Image src="https://picsum.photos/600" alt="image" />
+              </div>
+            </NavSubItem>
+          </NavItem>
+          <NavItem>
+            <a href="#">聯絡我們</a>
+            <NavSubItem>
+              <div style={{}}>
+                <Image src="https://picsum.photos/700" alt="image" />
+              </div>
+            </NavSubItem>
+          </NavItem>
+        </NavItemContainer>
+        <NavLeftItems>
+          <Icon name="user" color={"blue"} />
+          <Icon name="globe" />
+          <Icon name="search" />
+        </NavLeftItems>
+      </Navbar>
 
-export default class NavBaraa extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      browser: null
-    };
-  }
-
-  componentDidMount() {
-    // const browser = Bowser.parse(window.navigator.userAgent).browser.name;
-    console.log(Bowser.parse(window.navigator.userAgent));
-    // this.setState({ browser });
-  }
-
-  render() {
-    return (
-      <>
-        <Navbar>
-          <NavLogo>
-            <h1>KCI {this.state.browser && `${this.state.browser}`}</h1>
-          </NavLogo>
-          <NavItemContainer>
-            <NavItem>
-              <a href="#">關於我們</a>
-              <NavSubItem>
-                <div style={{}}>
-                  <Image src="https://picsum.photos/300" alt="image" />
-                </div>
-              </NavSubItem>
-            </NavItem>
-            <NavItem>
-              <a href="#">解決方案</a>
-              <NavSubItem>
-                <div style={{}}>
-                  <Image src="https://picsum.photos/400" alt="image" />
-                </div>
-                <div style={{}}>
-                  <Image src="https://picsum.photos/400" alt="image" />
-                </div>
-                <div style={{}}>
-                  <Image src="https://picsum.photos/400" alt="image" />
-                </div>
-                <div style={{}}>
-                  <Image src="https://picsum.photos/400" alt="image" />
-                </div>
-              </NavSubItem>
-            </NavItem>
-            <NavItem>
-              <a href="#">產品</a>
-              <NavSubItem>
-                <div style={{}}>
-                  <Image src="https://picsum.photos/600" alt="image" />
-                </div>
-                <div style={{}}>
-                  <Image src="https://picsum.photos/600" alt="image" />
-                </div>
-              </NavSubItem>
-            </NavItem>
-            <NavItem>
-              <a href="#">聯絡我們</a>
-              <NavSubItem>
-                <div style={{}}>
-                  <Image src="https://picsum.photos/700" alt="image" />
-                </div>
-              </NavSubItem>
-            </NavItem>
-          </NavItemContainer>
-          <NavLeftItems>
-            <Icon name="user" color={"blue"} />
-            <Icon name="globe" />
-            <Icon name="search" />
-          </NavLeftItems>
-        </Navbar>
-
-        <div style={{ height: "calc(100vh - 60px)", width: "100%" }}>
-          <Image src="https://picsum.photos/1080/1920" alt="image" />
-        </div>
-      </>
-    );
-  }
-}
+      <div style={{ height: "calc(100vh - 60px)", width: "100%" }}>
+        <Image src="https://picsum.photos/1080/1920" alt="image" />
+      </div>
+    </>
+  );
+};
