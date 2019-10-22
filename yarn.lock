@@ -770,6 +770,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.3.1":
+  version "7.6.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.3.tgz#935122c74c73d2240cafd32ddb5fc2a6cd35cf1f"
+  integrity sha512-kq6anf9JGjW8Nt5rYfEuGRaEAaH1mkv3Bbu6rYvLOpPh/RusSJXuKPEAoZ7L7gybZkchE8+NV5g9vKF4AGAtsA==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/template@^7.1.0", "@babel/template@^7.4.4", "@babel/template@^7.6.0":
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.6.0.tgz#7f0159c7f5012230dad64cca42ec9bdb5c9536e6"
@@ -1342,6 +1349,11 @@ bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
   integrity sha512-ItfYfPLkWHUjckQCk8xC+LwxgK8NYcXywGigJgSwOP8Y2iyWT4f2vsZnoOXTTbo+o5yXmIUJ4gn5538SO5S3gA==
+
+bowser@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/bowser/-/bowser-2.7.0.tgz#96eab1fa07fab08c1ec4c75977a7c8ddf8e0fe1f"
+  integrity sha512-aIlMvstvu8x+34KEiOHD3AsBgdrzg6sxALYiukOWhFvGMbQI6TRP/iY0LMhUrHs56aD6P1G0Z7h45PUJaa5m9w==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -2104,11 +2116,6 @@ destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
   integrity sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
-
-detect-browser@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/detect-browser/-/detect-browser-4.7.0.tgz#982429971b68cffcdfa03267e91e3de7e194a9f0"
-  integrity sha512-x+7zkRxwEiQ8qLKKfln9pTa4n87fbPHVpHyImmpEQn5lAmKurWBVbg0tb99ruAHqSA0ejrXMp0MahKEulE7LqA==
 
 detect-libc@^1.0.2:
   version "1.0.3"
@@ -3455,6 +3462,11 @@ mkdirp@0.5.1, mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
+mobile-detect@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/mobile-detect/-/mobile-detect-1.4.4.tgz#686c74e92d3cc06b09a9b3594b7b981494b137f6"
+  integrity sha512-vTgEjKjS89C5yHL5qWPpT6BzKuOVqABp+A3Szpbx34pIy3sngxlGaFpgHhfj6fKze1w0QKeOSDbU7SKu7wDvRQ==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -4510,7 +4522,7 @@ prop-types-exact@1.2.0:
     object.assign "^4.1.0"
     reflect.ownkeys "^0.2.0"
 
-prop-types@15.7.2, prop-types@^15.5.4, prop-types@^15.6.2:
+prop-types@15.7.2, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -4658,6 +4670,14 @@ react-is@^16.6.0, react-is@^16.8.1:
   version "16.10.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.10.2.tgz#984120fd4d16800e9a738208ab1fba422d23b5ab"
   integrity sha512-INBT1QEgtcCCgvccr5/86CfD71fw9EPmDxgiJX4I2Ddr6ZsV6iFXsuby+qWJPtmNuMY0zByTsG4468P7nHuNWA==
+
+react-spring@^8.0.27:
+  version "8.0.27"
+  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-8.0.27.tgz#97d4dee677f41e0b2adcb696f3839680a3aa356a"
+  integrity sha512-nDpWBe3ZVezukNRandTeLSPcwwTMjNVu1IDq9qA/AMiUqHuRN4BeSWvKr3eIxxg1vtiYiOLy4FqdfCP5IoP77g==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    prop-types "^15.5.8"
 
 react@^16.7.0:
   version "16.10.2"

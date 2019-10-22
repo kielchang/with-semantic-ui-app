@@ -2,7 +2,7 @@ import App from "next/app";
 import React from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import "semantic-ui-css/semantic.min.css";
-import IEnotSupport from "../components/IEnotSupport";
+import Layout from "../components/Layout";
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -26,13 +26,23 @@ const theme = {
 };
 
 export default class MyApp extends App {
+  static async getInitialProps({ Component, ctx }) {
+    let pageProps = {};
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+
+    return { pageProps };
+  }
+
   render() {
     const { Component, pageProps } = this.props;
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <IEnotSupport />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     );
   }

@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { detect } from "detect-browser";
+import Bowser from "bowser";
 
 export default Component => props => {
-  const [browser, setBrowser] = useState(null);
+  const [isValidBrowser, setIsValidBrowser] = useState(true);
 
   useEffect(() => {
-    const browser = detect();
-    if (browser) {
-      setBrowser(browser.name);
-    }
-  });
+    const browser = Bowser.getParser(navigator.userAgent);
 
-  if (browser === "ie") return <Component {...props} />;
-  else return null;
+    // const browser = detect();
+    if (browser) {
+      const isValidBrowser = browser.satisfies({
+        ie: ">11",
+        safari: ">=9",
+        chrome: ">=29",
+        firefox: ">28",
+        opera: ">=17"
+      });
+      setIsValidBrowser(isValidBrowser);
+    }
+  }, []);
+
+  return <>{isValidBrowser ? null : <Component {...props} />} </>;
 };

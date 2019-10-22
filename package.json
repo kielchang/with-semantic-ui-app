@@ -7,11 +7,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "detect-browser": "^4.7.0",
+    "bowser": "^2.7.0",
     "lorem-ipsum": "^2.0.3",
+    "mobile-detect": "^1.4.4",
     "next": "latest",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-spring": "^8.0.27",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.84.0",
     "styled-components": "^4.4.0"
