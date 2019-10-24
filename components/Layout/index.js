@@ -1,45 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
 import Navbar from "../Navbar";
-import MobileDetect from "mobile-detect";
 import IEnotSupport from "../IEnotSupport";
+import { withMobileDetect, withValidBrowser } from "../../hocs";
+import { compose } from "recompose";
 
-class Layout extends Component {
-  constructor(props) {
-    super(props);
-  }
+const Layout = ({ getWidth, isValidBrowser }) => {
+  return (
+    <>
+      <IEnotSupport isValidBrowser={isValidBrowser} />
+      <Navbar getWidth={getWidth} />
+    </>
+  );
+};
 
-  static async getInitialProps({ req }) {
-    let pageProps = {};
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-
-    const userAgent = req ? req.headers["user-agent"] : navigator.userAgent;
-    const md = new MobileDetect(userAgent);
-    const isMobileFromSSR = !!md.mobile();
-    console.log(isMobileFromSSR);
-
-    return {
-      pageProps,
-      isMobileFromSSR,
-      deviceInfo: {
-        mobile: md.mobile(),
-        tablet: md.tablet(),
-        os: md.os(),
-        userAgent: md.userAgent()
-      }
-    };
-  }
-
-  render() {
-    return (
-      <>
-        <IEnotSupport />
-        <Navbar />
-        {this.props.children}
-      </>
-    );
-  }
-}
-
-export default Layout;
+export default compose(
+  withValidBrowser,
+  withMobileDetect
+)(Layout);

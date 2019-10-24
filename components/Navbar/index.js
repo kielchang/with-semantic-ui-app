@@ -3,13 +3,13 @@ import Responsive from "../Responsive";
 import NavbarDesktop from "./navbar_desktop";
 import NavbarMobile from "./navbar_mobile";
 
-export default ({ ...props }) => (
+export default ({ getWidth, ...props }) => (
   <>
-    <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
-      <NavbarMobile {...props} />
-    </Responsive>
-    <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+    <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
       <NavbarDesktop {...props} />
+    </Responsive>
+    <Responsive getWidth={getWidth} maxWidth={Responsive.onlyMobile.maxWidth}>
+      <NavbarMobile {...props} />
     </Responsive>
   </>
 );

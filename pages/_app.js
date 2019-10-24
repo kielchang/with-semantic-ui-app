@@ -32,6 +32,10 @@ export default class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
 
+    if (Layout.getInitialProps) {
+      pageProps = { ...pageProps, ...(await Layout.getInitialProps(ctx)) };
+    }
+
     return { pageProps };
   }
 
@@ -40,9 +44,8 @@ export default class MyApp extends App {
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Layout {...pageProps} />
+        <Component {...pageProps} />
       </ThemeProvider>
     );
   }

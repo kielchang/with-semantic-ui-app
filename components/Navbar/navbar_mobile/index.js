@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navbar } from "./styled";
 import MenuIcon from "./MenuIcon";
+import Menu from "./Menu";
 
 export default () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,6 +14,7 @@ export default () => {
           setIsOpen(!isOpen);
         }}
       />
+      <Menu isOpened={isOpen} />
     </Navbar>
   );
 };
