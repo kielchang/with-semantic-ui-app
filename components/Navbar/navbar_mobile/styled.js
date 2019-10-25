@@ -13,10 +13,18 @@ export const Navbar = styled.nav`
 `;
 
 export const Menu = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
   position: absolute;
   background-color: #1c1c1c;
   height: calc(100% - 60px);
   width: 100%;
   top: 60px;
   left: 0;
+`;
+
+export const NavLogo = styled.div`
+  flex: 1;
+  & h1 {
+  }
 `;

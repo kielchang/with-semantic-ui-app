@@ -1,10 +1,11 @@
 import { Icon } from "semantic-ui-react";
 import { Navbar, NavLogo, NavItemContainer, NavItem, NavSubItem, Image, NavLeftItems } from "./styled";
+import Logo from "../../Logo";
 
 export default () => (
   <Navbar>
     <NavLogo>
-      <h1>KCI</h1>
+      <Logo size={150} />
     </NavLogo>
     <NavItemContainer>
       <NavItem>
