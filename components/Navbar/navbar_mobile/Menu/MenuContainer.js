@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTransition } from "react-spring";
 import { Menu } from "../styled";
 
-export default ({ isOpened, children }) => {
+export default ({ isOpened, onMenuClosed, children }) => {
   const transitions = useTransition(isOpened, null, {
     from: { opacity: 0.8, height: "10%" },
     enter: { opacity: 1, height: "100%" },
@@ -13,7 +13,7 @@ export default ({ isOpened, children }) => {
     item ? (
       <Menu key={key} style={{ ...props }}>
         {children}
-        <div style={{ flex: 1 }}></div>
+        <div style={{ flex: 1 }} onClick={onMenuClosed}></div>
       </Menu>
     ) : null
   );

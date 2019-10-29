@@ -31,7 +31,12 @@ export default () => {
           }}
         ></div>
       )}
-      <Menu isOpened={isOpen} />
+      <Menu
+        isOpened={isOpen}
+        onMenuClosed={() => {
+          setIsOpen(false);
+        }}
+      />
     </Navbar>
   );
 };
