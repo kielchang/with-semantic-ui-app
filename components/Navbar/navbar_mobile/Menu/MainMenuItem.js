@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSpring, useTransition, animated, config } from "react-spring";
-import { Icon } from "semantic-ui-react";
 import styled from "styled-components";
+import SubMenuContainer from "./SubMenuContainer";
 
 const Item = styled(animated.div)`
   display: flex;
@@ -41,6 +41,8 @@ export default ({ title, children }) => {
     setOnScale(!onScale);
   };
 
+  const [isOpenSubmenu, setIsOpenSubmenu] = useState(false);
+
   return transitions.map(({ item, key, props }) =>
     item ? (
       <>
@@ -49,11 +51,19 @@ export default ({ title, children }) => {
           onTouchStart={handleFocuseActive}
           onMouseEnter={handleFocuseActive}
           style={{ ...props, ...transformScaleConfig }}
+          onClick={() => {
+            setIsOpenSubmenu(true);
+          }}
         >
           <Title style={{ ...transformScaleConfig }}>{title}</Title>
-          {/* <Icon style={{ ...transformScaleConfig }} name="angle right" size="big" /> */}
         </Item>
-        {children}
+        <SubMenuContainer
+          key={"test"}
+          isOpened={isOpenSubmenu}
+          onClosed={() => {
+            setIsOpenSubmenu(false);
+          }}
+        ></SubMenuContainer>
       </>
     ) : null
   );
