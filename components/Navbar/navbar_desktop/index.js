@@ -5,7 +5,7 @@ import Logo from "../../Logo";
 export default () => (
   <Navbar>
     <NavLogo>
-      <Logo size={150} />
+      <Logo size={30} />
     </NavLogo>
     <NavItemContainer>
       <NavItem>

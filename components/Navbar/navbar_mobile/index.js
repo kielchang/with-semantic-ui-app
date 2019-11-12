@@ -10,7 +10,7 @@ export default () => {
   return (
     <Navbar>
       <NavLogo>
-        <Logo size={150} />
+        <Logo size={30} />
       </NavLogo>
       <MenuIcon
         size={36}

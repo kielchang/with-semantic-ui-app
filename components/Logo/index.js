@@ -1,7 +1,7 @@
 import React from "react";
 
 export default ({ size, ...props }) => (
-  <svg height={size} width={966.12 / (2171.24 / size)} viewBox="0 0 2171.24 966.12" {...props}>
+  <svg height={size} width={(2171.24 * size) / 966.12} viewBox="0 0 2171.24 966.12" {...props}>
     <defs>
       <style>{".prefix__a{fill:#ed1c24}"}</style>
     </defs>
